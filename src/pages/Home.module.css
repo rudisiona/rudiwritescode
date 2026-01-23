@@ -1,0 +1,75 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+}
+
+.home h3 {
+  font-size: 1.5rem;
+}
+
+.holoContainer { /* changed from .holo-container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  perspective: 500px;
+}
+
+.holoText { /* changed from .holo-text */
+  position: relative;
+  display: inline-block;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #ffcc00;
+  border-right: 2px solid #ffcc00;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation:
+    homeTyping 4s steps(30, end) forwards,
+    homeBlink 0.75s step-end infinite,
+    homeFlicker 3s infinite alternate;
+}
+
+.holoText::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 240, 150, 0.2),
+    transparent
+  );
+  transform: skewX(-15deg);
+  animation: shimmer 4s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes homeTyping {
+  from { width: 0; }
+  to { width: 30ch; } /* match the exact length of your text */
+}
+
+@keyframes homeBlink {
+  from, to { border-color: transparent; }
+  50% { border-color: #ffcc00; }
+}
+
+@keyframes homeFlicker {
+  0%, 100% { opacity: 0.9; }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 2px #ffcc00,
+      0 0 8px #ffdb4d,
+      0 0 16px rgba(255, 225, 100, 0.7);
+  }
+}

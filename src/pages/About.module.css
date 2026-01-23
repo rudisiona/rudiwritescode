@@ -1,0 +1,65 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #FFD447;
+    font-size: 3.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    /* border-right: 3px solid #FFD447; blinking cursor */
+    /* width: 0; start hidden for typing effect */
+  
+    text-shadow:
+      0 0 2px #FFD447,     /* inner glow */
+      0 0 5px #FFD447,    /* soft yellow halo */
+      0 0 12px #ff66cc,    /* pink glow */
+      0 0 30px #ff66cc;    /* deeper neon edge */
+  
+    /* animation:
+      aboutTyping 3s steps(30, end) forwards,
+      aboutBlink 0.75s step-end infinite,
+      aboutGlowPulse 3s ease-in-out infinite alternate; */
+  }
+  
+  .about p {
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: justify;
+    color: #FFD447;
+    width: 70%;
+    font-size: 2rem;
+
+
+  }
+  
+  /* typing effect
+ @keyframes aboutTyping {
+    from { width: 0; }
+    to { width: 14ch; }
+  }
+  
+  /* blinking cursor */
+ /* @keyframes aboutBlink {
+    from, to { border-color: transparent; }
+    50% { border-color: #FFD447; }
+  } */
+  
+  /* subtle glowing pulse */
+ /* @keyframes aboutGlowPulse {
+    0%, 100% {
+      text-shadow:
+        0 0 4px #FFD447,
+        0 0 10px #FFD447,
+        0 0 20px #ff66cc,
+        0 0 40px #ff66cc;
+    }
+    50% {
+      text-shadow:
+        0 0 6px #ffec85,
+        0 0 14px #FFD447,
+        0 0 25px #ff99dd,
+        0 0 50px #ff66cc;
+    }
+  } */ 
