@@ -3,7 +3,7 @@ import habitrabbit from '../assets/habitrabbit.jpg'
 import './project.css'
 function Three() {
     return (
-      <section>
+      <section className="projectsect">
           <h1>Habit Tracker - Python, Django, PostgreSQL, HTML, CSS</h1>
           <h2><a href="https://github.com/rudisiona/habittracker" target="_blank" rel="noreferrer">GitHub Repo</a></h2>
           <h2><a href="https://habitrabbit-4c12e5279299.herokuapp.com/" target="_blank" rel="noreferrer">Live Demo</a></h2>

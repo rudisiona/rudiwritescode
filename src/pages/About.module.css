@@ -1,65 +1,98 @@
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  padding: 4rem 3rem;
+  margin: 6rem auto;
+  max-width: 900px;
+  font-size: 25px;
+  color: #FFD447;
+  text-shadow: 0 0 8px #ff6ec7, 0 0 15px #ff6ec7;
+   
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.08),
+    rgba(0, 120, 255, 0.02)
+  );
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.35),
+    0 0 60px rgba(0, 180, 255, 0.25),
+    inset 0 0 25px rgba(0, 255, 255, 0.18);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transform: perspective(900px) rotateX(3deg);
+  transform-origin: bottom center;
+
+  animation: holoFloat 6s ease-in-out infinite;
 }
-.about h1 {
-    font-family: "Roboto Condensed", sans-serif;
-    color: #FFD447;
-    font-size: 3.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    /* border-right: 3px solid #FFD447; blinking cursor */
-    /* width: 0; start hidden for typing effect */
-  
-    text-shadow:
-      0 0 2px #FFD447,     /* inner glow */
-      0 0 5px #FFD447,    /* soft yellow halo */
-      0 0 12px #ff66cc,    /* pink glow */
-      0 0 30px #ff66cc;    /* deeper neon edge */
-  
-    /* animation:
-      aboutTyping 3s steps(30, end) forwards,
-      aboutBlink 0.75s step-end infinite,
-      aboutGlowPulse 3s ease-in-out infinite alternate; */
-  }
-  
-  .about p {
-    font-family: "Roboto Condensed", sans-serif;
-    text-align: justify;
-    color: #FFD447;
-    width: 70%;
-    font-size: 2rem;
 
+.about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(0, 255, 255, 0.35),
+    transparent 60%
+  );
+
+  opacity: 0.35;
+
+  animation: holoFlicker 3s infinite alternate;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(0, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 100%
+  );
+
+  transform: translateY(-120%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+
+  animation: holoSheen 5s linear infinite;
+}
+
+@keyframes holoSheen {
+  from {
+    transform: translateY(-120%);
   }
-  
-  /* typing effect
- @keyframes aboutTyping {
-    from { width: 0; }
-    to { width: 14ch; }
+  to {
+    transform: translateY(120%);
   }
-  
-  /* blinking cursor */
- /* @keyframes aboutBlink {
-    from, to { border-color: transparent; }
-    50% { border-color: #FFD447; }
-  } */
-  
-  /* subtle glowing pulse */
- /* @keyframes aboutGlowPulse {
-    0%, 100% {
-      text-shadow:
-        0 0 4px #FFD447,
-        0 0 10px #FFD447,
-        0 0 20px #ff66cc,
-        0 0 40px #ff66cc;
-    }
-    50% {
-      text-shadow:
-        0 0 6px #ffec85,
-        0 0 14px #FFD447,
-        0 0 25px #ff99dd,
-        0 0 50px #ff66cc;
-    }
-  } */ 
+}
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.12) 0px,
+    rgba(0, 255, 255, 0.12) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+
+  opacity: 0.22;
+  mix-blend-mode: screen;
+
+  animation: scanMove 8s linear infinite;
+}
+

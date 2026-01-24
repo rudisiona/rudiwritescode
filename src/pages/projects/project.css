@@ -1,17 +1,75 @@
-section {
+.projectsect {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #FFD447;
 }
 
-section a {
+.projectsect a {
     text-decoration: none;
     color: black;
     text-shadow: 0 0 8px #ff6ec7, 0 0 15px #ff6ec7;
 
 }
 
-section a:hover {
+.projectsect a:hover {
     color: #FFD447;
 }
+
+.projectsect {
+    position: relative;
+    padding: 3rem 3.5rem;
+    margin: 5rem auto;
+    max-width: 900px;
+  
+    background: linear-gradient(
+      180deg,
+      rgba(0, 255, 255, 0.07),
+      rgba(0, 120, 255, 0.02)
+    );
+  
+    border-radius: 14px;
+  
+    box-shadow:
+      0 0 20px rgba(0, 255, 255, 0.35),
+      0 0 55px rgba(0, 180, 255, 0.25),
+      inset 0 0 25px rgba(0, 255, 255, 0.18);
+  
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  
+    transform: perspective(900px) rotateX(3deg);
+    transform-origin: bottom center;
+  
+    animation: projectFloat 6s ease-in-out infinite;
+  }
+  
+  .projectsect::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 255, 255, 0.12) 0px,
+      rgba(0, 255, 255, 0.12) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  
+    opacity: 0.22;
+    mix-blend-mode: screen;
+  
+    animation: scanMove 8s linear infinite;
+  }
+  
+.projectsect img {
+    margin-top: 1.5rem;
+    border-radius: 8px;
+  
+    box-shadow:
+      0 0 15px rgba(0, 255, 255, 0.35),
+      0 0 40px rgba(0, 180, 255, 0.25);
+  }
+  
