@@ -96,3 +96,39 @@ section::before {
   animation: scanMove 8s linear infinite;
 }
 
+@media (max-width: 768px) {
+  .about {
+    padding: 2.5rem 1.8rem;
+    margin: 4rem 1rem;
+    font-size: 18px;
+
+    transform: perspective(600px) rotateX(1.5deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .about::after {
+    animation: holoSheenMobile 6s linear infinite;
+  }
+}
+
+@keyframes holoSheenMobile {
+  from {
+    transform: translateY(-180%);
+  }
+  to {
+    transform: translateY(180%);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    animation-duration: 8s;
+  }
+
+  .about::after {
+    opacity: 0.35;
+  }
+}
+
+
