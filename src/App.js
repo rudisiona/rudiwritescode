@@ -6,7 +6,7 @@ import About from "./pages/About";
 import One from "./pages/projects/1"
 import Two from "./pages/projects/2"
 import Three from "./pages/projects/3"
-import Achievements from "./pages/Achievements";
+// import Achievements from "./pages/Achievements";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path='/projects/1' element={<One />} />
         <Route path='/projects/2' element={<Two />} />
         <Route path='/projects/3' element={<Three />} />
-        <Route path="/achievements" element={<Achievements />} />
+        {/* <Route path="/achievements" element={<Achievements />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

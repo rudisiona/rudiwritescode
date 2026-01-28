@@ -23,8 +23,7 @@ function Navbar() {
           </div>
         )}
       </div>
-      <Link to="/achievements">Achievements</Link>
-      <Link to="/contact">Contact</Link>
+      <Link to="/contact">Check Me Out</Link>
     </nav>
   );
 }
